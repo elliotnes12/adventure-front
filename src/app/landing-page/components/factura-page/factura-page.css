@@ -1,0 +1,263 @@
+@import 'flatpickr/dist/flatpickr.min.css';
+
+/**Metodología BEM*/
+.factura {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-muted);
+  border-radius: 0.2em;
+  box-shadow: 0 0.5em 1.5em -0.5em var(--color-shadow-strong);
+  color: var(--color-text-default);
+  width: 80%;
+  padding: 1em 2em;
+  position: relative;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 950px) {
+  .factura {
+    max-width: 800px;
+  }
+}
+
+.factura__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex: 1;
+  margin-bottom: 2em;
+}
+@media screen and (min-width: 950px) {
+  .factura__header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.factura__logo {
+  width: 300px;
+}
+
+@media screen and (min-width: 950px) {
+  .factura__logo {
+    width: 200px;
+  }
+}
+
+.factura__logo_dragable-area {
+  border: 2px dashed var(--color-border-brand);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 60%;
+  overflow: hidden;
+  position: relative;
+  width: 200px;
+  margin-top: 20px;
+  transition: transform 0.3s;
+  height: 160px;
+  padding: 10px;
+  text-align: center;
+}
+
+.factura__logo_dragable-area:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.factura__logo_input {
+  display: none;
+}
+
+.factura__edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: var(--color-accent);
+  cursor: pointer;
+  font-size: 1.2em;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  top: -110px;
+}
+
+@media screen and (min-width: 950px) {
+  .factura__edit {
+    left: -150px;
+    top: 30px;
+  }
+}
+
+/*** Estilos para el cuerpo de la factura*/
+
+.factura__body_left,.factura__footer_left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+} 
+
+@media screen and (min-width: 950px) {
+
+  .factura__body_left_names {
+     flex-direction: column;
+  }
+
+  .factura__body_divider,.factura__footer_divider {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+
+.factura__body_right,.factura__footer_right {
+  display: flex;
+  flex-direction: column;
+}
+
+@media  screen and (min-width:950px) {
+  .factura__body_right,.factura__footer_right {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  
+}
+
+
+/** * Estilos para inputs editables**/
+
+.editable-input {
+  border: 1px dashed transparent;
+  background: transparent;
+  padding: 4px;
+  width: 100%;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.editable-area {
+  border: 1px dashed transparent;
+  background: transparent;
+  padding: 4px;
+  width: 100%;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 950px) {
+  .editable-input {
+    width: auto;
+    max-width: 250px;
+  }
+  
+}
+
+.editable-input:hover,.editable-area:hover {
+  border-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.editable-input:focus,.editable-area:focus {
+  border: 1px dotted var(--color-accent);
+  background: var(--color-surface);
+  outline: none;
+  box-shadow: 0 0 5px var(--color-accent-shadow);
+}
+.editable__header{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+
+
+/** Estilos para tabla */
+
+.factura__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2em;
+  box-sizing: border-box;
+  min-width: 100%;
+}
+
+.factura__table thead {
+  background-color: var(--head-color);
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  line-height: 40px;
+}
+
+.factura__table th,
+.factura__table td {
+  border-bottom: 1px solid var(--color-border-muted);
+  text-align: center;
+}
+.factura__table tfoot {
+  display: none;
+}
+
+.factura__table:hover tfoot,
+.factura__table:focus-within tfoot {
+  display: table-footer-group;
+}
+
+
+/** Estilos para el botón de agregar producto */
+
+.factura__add_product {
+ 
+  line-height: 84px;
+}
+
+.factura__add_product_button {
+    display: inline-block;
+    background-color: var(--color-gradient-end);
+    color: #fff;
+    border: none;
+    padding: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 120px;
+    line-height: 37px;
+    box-sizing: border-box;
+}
+
+
+/*** Estilos para el botón de eliminar producto */
+
+.factura__remove_product_box{
+  position: relative;
+}
+
+.factura__remove_product_button{
+  position: absolute;
+  top: 5px;
+  right: 30px;
+}
+
+
+/** Estilos para el footer de la factura */
+
+.factura__footer{
+  margin-top: 50px;
+}
+
+.factura__footer_total{
+  border-top:2px solid var(--head-color);
+}
+.factura__footer_left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

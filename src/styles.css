@@ -1,3 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+	--color-gradient-start: #43be5d;
+	--color-gradient-mid: #43be5d;
+	--color-gradient-end: #43be5d;
+	--color-surface: #fff;
+	--color-border-muted: #ddd;
+	--color-text-default: #333;
+	--color-accent: #ff5c35;
+	--color-shadow-strong: #00000080;
+	--color-accent-shadow: rgba(255, 92, 53, 0.2);
+    --color-border-brand: var(--color-gradient-end);
+	--head-color:#1F1F1F;
+}
+
+
+
+body {
+	font-family: 'Roboto', sans-serif;
+	align-items: center;
+	background: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		from(var(--color-gradient-start)),
+		color-stop(65%, var(--color-gradient-mid)),
+		to(var(--color-gradient-end))
+	);
+	background: linear-gradient(
+		0deg,
+		var(--color-gradient-start),
+		var(--color-gradient-mid) 65%,
+		var(--color-gradient-end)
+	);
+	box-sizing: initial;
+	margin: 0 auto;
+	height: auto;
+	width: 100%;
+    padding: 140px 0 140px 0;
+	overflow-y: auto;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}	
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {  
+  background: var(--color-border-muted);
+  border-radius: 4px;
+}
+@media screen and (min-width:950px) {
+    body{
+        padding-top: 70px;
+    }
+}
