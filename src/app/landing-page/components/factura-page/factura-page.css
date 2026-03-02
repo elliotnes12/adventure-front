@@ -15,7 +15,7 @@
 
 @media screen and (min-width: 950px) {
   .factura {
-    max-width: 800px;
+    max-width: 950px;
   }
 }
 
@@ -43,6 +43,10 @@
   .factura__logo {
     width: 200px;
   }
+}
+
+.factura__logo_dragable-area--invalid {
+   border-color: red !important;
 }
 
 .factura__logo_dragable-area {
@@ -85,10 +89,30 @@
   top: -110px;
 }
 
+.factura__clean {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: var(--color-accent);
+  cursor: pointer;
+  font-size: 1.2em;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+  top: -110px;
+  left: 130px;
+}
+
 @media screen and (min-width: 950px) {
   .factura__edit {
     left: -150px;
     top: 30px;
+  }
+   .factura__clean {
+    left: -150px;
+    top: 120px;
   }
 }
 
@@ -181,6 +205,8 @@
 
 /** Estilos para tabla */
 
+
+
 .factura__table {
   width: 100%;
   border-collapse: collapse;
@@ -260,4 +286,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+/** Estilos para mensajes de error */
+
+.factura__messages{
+  padding:10px 10px;
+  text-align: center;
+  color:var(--color-accent);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 950px) {
+  .factura__messages{
+    position: absolute;
+    top: 200px;
+    right:-100px;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+  }
+}
+
+
+/** Estilos para el botón de generar factura */
+
+.factura__submit_button {
+  display: inline-block;
+  background-color: var(--color-gradient-end);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
 }
