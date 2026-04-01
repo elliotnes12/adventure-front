@@ -19,7 +19,8 @@
           "options": {
             "security": {
                "allowedHosts": [
-                   "adventure-front.onrender.com"
+                   "adventure-front.onrender.com",
+                    "34.70.191.84"
                ]
             },
             "browser": "src/main.ts",
